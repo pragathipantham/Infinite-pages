@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Module</title>
+  <link rel="stylesheet" href="./login.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmd4fStjQVrEKkCuru4eIp2597r3pq0ZIDvg&s); background-size: cover;">
+  <div class="login-container">
+    <div class="login-box" style="background-image:url(data:image/jpeg;base64,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);background-position: center; background-size: cover;">
+      <div class="signin-section">
+        <h2 >Sign In</h2>
+        <form [formGroup]="customerFormGroup" (ngSubmit)="onSubmit()">
+          <div class="input-container">
+            <label for="email">Email</label>
+            <div class="input-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="text" id="email" formControlName="email" placeholder="Email">
+            </div>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+              <div *ngIf="email.errors['required']">Email is required.</div>
+              <div *ngIf="email.errors['email']">Invalid email format.</div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="password">Password</label>
+            <div class="input-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" formControlName="password" placeholder="Password">
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+              <div *ngIf="password.errors['required']">Password is required.</div>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="customerFormGroup.invalid" style="background-color:	#428de3; height:50px; border-radius: 10px;">Sign In</button>
+        </form>
+      </div>
+      <div class="welcome-section" style="background-color:#86242e;background-position: center; background-size: cover; background-image:url(data:image/jpeg;base64,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)">
+        <h2>Welcome to login</h2>
+        <p>Don't have an account?</p>
+        <button class="signup-button" (click)="redirectToSignup()">REGISTER</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

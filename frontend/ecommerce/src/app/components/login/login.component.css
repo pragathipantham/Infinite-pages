@@ -1,0 +1,11 @@
+body {
+    background-image: url("https://img.freepik.com/premium-photo/background-hyper-realistic-colorful-beautiful-wallpaper-hd-best-quality-image_859483-578570.jpg?ga=GA1.1.280240367.1708670920&semt=ais_user");
+    width: 100%;
+    background-size: cover;
+}
+
+.col-6 {
+    margin-top: 20%;
+    background-image: url("https://img.freepik.com/premium-photo/background-hyper-realistic-colorful-beautiful-wallpaper-hd-best-quality-image_859483-578570.jpg?ga=GA1.1.280240367.1708670920&semt=ais_user");
+    border-radius: 10px;
+}

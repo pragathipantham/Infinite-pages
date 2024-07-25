@@ -1,0 +1,40 @@
+import { Injectable } from '@angular/core';
+import { Country } from '../common/country';
+import { State } from '../common/state';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CheckoutService {
+  countriesUrl = 'http://localhost:8080/api/countries';
+  stateUrl='http://localhost:8080/api/states';
+
+  constructor(private http:HttpClient) { }
+   
+  getCountires() {
+    return this.http.get<GetResponseCountries>(this.countriesUrl)
+      .pipe(map((response) => response._embedded.countries));
+  }
+
+  getStates(theCountryCode: string) {
+    const searchStatesUrl = 'http://localhost:8080/api/states/search/findByCountryCode?code=' + theCountryCode;
+    return this.http.get<GetResponseStates>(searchStatesUrl)
+      .pipe(map((response) => response._embedded.states));
+  }
+
+}
+
+interface GetResponseCountries{
+  _embedded: {
+    countries: Country[];
+  };
+}
+
+
+interface GetResponseStates{
+  _embedded: {
+    states: State[];
+  };
+}

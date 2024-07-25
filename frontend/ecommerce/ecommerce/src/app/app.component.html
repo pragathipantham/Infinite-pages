@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: blueviolet;"> 
+  <div class="container-fluid" style="background-color:#5dacbd; padding: 30px;">
+    <a class="navbar-brand" href="#">INFINITE PAGES</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/contact-us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-us">About Us</a>
+        </li>
+        <app-product-category-menu></app-product-category-menu>
+        <app-search></app-search>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" routerLink="/login">LOGIN</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" *ngIf="isLoggedIn()" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger; font-display: initial;">Welcome.....{{getUserName()}}</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-sm-2">
+        <li class="nav-item">
+          <app-cart-status></app-cart-status>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" routerLink="" (click)="logout()" data-bs-toggle="tooltip" title="Logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
